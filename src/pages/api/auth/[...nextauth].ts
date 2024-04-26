@@ -10,6 +10,7 @@ export default NextAuth({
         "https://accounts.google.com/o/oauth2/auth?prompt=consent&access_type=offline&response_type=code",
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
   },
