@@ -6,7 +6,7 @@ import { Layout } from "../components/Layout";
 const DashboardPage: React.FC = () => {
   return (
     <div>
-      <Header />
+      <Header imgLink="/dashboard" showLogout={true} />
       <Layout>
         <div>
           {/* Your user dashboard content here */}
