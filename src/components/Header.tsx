@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "../styles/Header.module.css";
 import Session from "next-auth/react";
 import { useSession, signOut } from "next-auth/react";
 
@@ -61,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
         </Link>
-        <nav className="flex gap-7.5 max-md:gap-5">
+        <nav className={styles.headerNav}>
           {renderLinks()}
 
           {/* Logout button - always visible if a session exists */}
