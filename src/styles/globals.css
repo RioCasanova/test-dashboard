@@ -16,7 +16,7 @@
   }
 }
 
-body {
+.background-image {
   color: rgb(var(--foreground-rgb));
   background-image: url("../img/data_background_img.jpg"); /* Replace 'path/to/your/image.jpg' with the path to your background image */
   background-size: cover;
@@ -26,7 +26,17 @@ body {
   position: relative;
 }
 
-body::before {
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.background-image::before {
   content: "";
   position: absolute;
   top: 0;
@@ -37,7 +47,7 @@ body::before {
     0,
     0,
     0,
-    0.5
+    0.7
   ); /* Adjust the opacity (0.5) to make the overlay darker or lighter */
 }
 
