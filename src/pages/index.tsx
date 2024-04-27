@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className="background-image">
-      <Header showLogout={false} />
+      <Header imgLink="/" showLogout={false} />
       <Layout>
         <main className="relative py-48 max-md:px-4">
           <div className="w-full max-w-[659px]">
