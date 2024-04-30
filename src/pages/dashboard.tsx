@@ -46,7 +46,7 @@ const DashboardPage: React.FC = () => {
               <SidebarItem icon={<LifeBuoy size={24} />} text="Support" />
               <SidebarItem icon={<Settings size={24} />} text="Settings" />
               <SidebarItem
-                icon={<LogOut size={24} color="#FF0000" />}
+                icon={<LogOut size={24} color="#880808" />}
                 onClick={handleLogout}
                 text="Logout"
               />

@@ -16,13 +16,13 @@
   }
 }
 
-.background-image {
+/* .background-image {
   background-image: url("../img/data_background_img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+} */
 .min-h-screen {
   min-height: 100vh; /* Ensures the div is at least as tall as the viewport */
 }
@@ -42,25 +42,34 @@ body {
   }
 }
 
-@supports (-webkit-overflow-scrolling: touch) {
-  /* Use a pseudo-element for iOS compatibility */
-  body::before {
-    content: "";
-    position: fixed; /* Fixed position */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1; /* Ensure it's rendered behind the content */
+.background-image {
+  position: relative; /* Ensures the container is positioned */
+  z-index: 0; /* Sets the base layer */
+}
 
-    background-image: url("../img/data_background_img.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: none; /* Ensure click events pass through to elements below */
-  }
-  /* Override the actual body background for iOS */
-  body {
-    background: none;
-  }
+.background-image::before {
+  content: "";
+  position: fixed; /* or absolute if fixed doesn't work as expected */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/data_background_img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: -1; /* Ensure it's behind the content */
+}
+
+.overlay {
+  position: absolute; /* Cover the same area as .background-image */
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 70% opacity */
+  z-index: 1; /* Above the background image */
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Above the overlay */
 }

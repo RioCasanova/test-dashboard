@@ -21,12 +21,11 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen">
-      <div className="absolute inset-0 background-image"></div>
-      <div className="absolute inset-0 bg-black bg-opacity-70"></div>{" "}
-      {/*<!-- Overlay -->*/}
+      <div className="background-image"></div>
+      <div className="overlay"></div> {/*<!-- Overlay -->*/}
       <Header imgLink="/" showLogout={false} />
       <Layout>
-        <main className="relative py-60 max-md:px-4">
+        <main className="content py-60 max-md:px-4">
           <div className="w-full max-w-[659px]">
             <h1 className="text-2xl text-white font-[275]">
               Your Software Specialist
@@ -44,7 +43,7 @@ export default function Home() {
             </p>
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
               <button
-                className="group mt-8 rounded-lg border border-violet-700 px-5 py-4 transition-colors hover:border-white hover:bg-gray-100 hover:dark:bg-neutral-800/30"
+                className="group mt-8 rounded-lg border border-violet-700 px-5 py-4 transition-colors hover:border-white hover:bg-violet-950 hover:dark:bg-neutral-800/30"
                 onClick={handleLogin}
               >
                 <h2 className={`mb-3 text-2xl font-semibold`}>Login</h2>
