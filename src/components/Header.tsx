@@ -38,10 +38,6 @@ const Header: React.FC<HeaderProps> = ({
     return null;
   };
 
-  const handleLogout = async () => {
-    await signOut({ callbackUrl: "/" }); // Redirect to the homepage
-  };
-
   return (
     <header className="w-full fixed top-0 z-50 bg-black bg-opacity-20 backdrop-filter backdrop-blur-md px-12 py-2 max-md:px-5">
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center max-md:flex-wrap">
@@ -62,19 +58,7 @@ const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
         </Link>
-        <nav className={styles.headerNav}>
-          {renderLinks()}
-
-          {/* Logout button - always visible if a session exists */}
-          {session ? (
-            <button
-              onClick={handleLogout}
-              className="font-semibold text-white max-md:max-w-full hover:text-violet-700 mr-3"
-            >
-              Logout
-            </button>
-          ) : null}
-        </nav>
+        <nav className={styles.headerNav}>{renderLinks()}</nav>
       </div>
     </header>
   );

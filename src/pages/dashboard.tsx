@@ -1,6 +1,5 @@
 // pages/dashboard.tsx
 
-import styles from "@/styles/Dashboard.module.css";
 import { Sidebar, SidebarItem } from "@/components/Sidebar";
 
 import {
@@ -23,13 +22,13 @@ const handleLogout = async () => {
 const DashboardPage: React.FC = () => {
   const { data: session } = useSession();
   return (
-    <div className="">
+    <div>
       {/* <Header imgLink="/dashboard" showLogout={true} /> */}
-      <main className={`${styles.mainPadding}`}>
+      <main>
         <Sidebar>
-          <div className="">
+          <div>
             {" "}
-            <div className="">
+            <div>
               <SidebarItem
                 icon={<LayoutDashboard size={24} />}
                 text="Dashboard"
