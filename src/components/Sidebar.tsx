@@ -6,14 +6,14 @@ interface SidebarContextType {
   expanded: boolean;
 }
 
-const SidebarContext = createContext<SidebarContextType>({ expanded: true });
+const SidebarContext = createContext<SidebarContextType>({ expanded: false });
 
 interface Sidebar {
   children: ReactNode;
 }
 
 export function Sidebar({ children }: Sidebar) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <aside className={`h-screen sidebar ${expanded ? "w-64" : "w-16"}`}>

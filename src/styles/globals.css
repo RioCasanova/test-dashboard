@@ -1,39 +1,18 @@
+/* -- IMPORTS & ROOT -- */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-/* .background-image {
-  background-image: url("../img/data_background_img.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
-.min-h-screen {
-  min-height: 100vh; /* Ensures the div is at least as tall as the viewport */
-}
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  --primary: #4154f1;
+  --secondary: #717ff5;
+  --bgLight: #f6f9ff;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -42,6 +21,19 @@ body {
   }
 }
 
+/* -- LAYOUT STYLES -- */
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* -- BACKGROUND STYLES -- */
 .background-image {
   position: relative; /* Ensures the container is positioned */
   z-index: 0; /* Sets the base layer */
@@ -72,4 +64,28 @@ body {
 .content {
   position: relative;
   z-index: 2; /* Above the overlay */
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* -- MEDIA QUERIES -- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* -- TYPOGRAPHY -- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
 }

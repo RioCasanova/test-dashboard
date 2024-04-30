@@ -1,5 +1,6 @@
 // pages/dashboard.tsx
 
+import PageTitle from "@/components/PageTitle";
 import { Sidebar, SidebarItem } from "@/components/Sidebar";
 
 import {
@@ -24,7 +25,7 @@ const DashboardPage: React.FC = () => {
   return (
     <div>
       {/* <Header imgLink="/dashboard" showLogout={true} /> */}
-      <main>
+      <main className="flex">
         <Sidebar>
           <div>
             {" "}
@@ -52,8 +53,28 @@ const DashboardPage: React.FC = () => {
             </div>
           </div>
         </Sidebar>
-        <div className="w-full max-w-[659px]">
-          <div></div>
+        <div className="w-full p-8 flex flex-col">
+          <PageTitle title="Dashboard" message="Welcome back, John Doe!" />
+          <div className="dash-analytics flex flex-wrap gap-4">
+            {" "}
+            {/* Adjusted here */}
+            <div className="flex-1 min-w-[200px] p-4 bg-gray-100 rounded-lg">
+              Container 1
+            </div>{" "}
+            {/* Add min-width for responsiveness */}
+            <div className="flex-1 min-w-[200px] p-4 bg-gray-100 rounded-lg">
+              Container 2
+            </div>
+            <div className="flex-1 min-w-[200px] p-4 bg-gray-100 rounded-lg">
+              Container 3
+            </div>
+            <div className="flex-1 min-w-[200px] p-4 bg-gray-100 rounded-lg">
+              Container 4
+            </div>
+            <div className="flex-1 min-w-[200px] p-4 bg-gray-100 rounded-lg">
+              Container 5
+            </div>
+          </div>
         </div>
       </main>
     </div>
