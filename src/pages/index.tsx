@@ -46,7 +46,9 @@ export default function Home() {
                 className="group mt-8 rounded-lg border border-violet-700 px-5 py-4 transition-colors hover:border-white hover:bg-violet-950 hover:dark:bg-neutral-800/30"
                 onClick={handleLogin}
               >
-                <h2 className={`mb-3 text-2xl font-semibold`}>Login</h2>
+                <h2 className={`mb-3 text-2xl font-semibold text-white`}>
+                  Login
+                </h2>
               </button>
             </div>
           </div>
