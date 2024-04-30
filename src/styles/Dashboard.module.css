@@ -1,0 +1,13 @@
+/* Dashboard.module.css */
+.mainPadding {
+  position: relative;
+}
+
+/* Assuming 'max-md:px-4' is a utility class you are trying to replicate: */
+@media (max-width: 768px) {
+  /* Change 768px to the max width you need */
+  .mainPadding {
+    padding-left: 1rem; /* px-4 is usually 1rem if base font-size is 16px */
+    padding-right: 1rem; /* Adjust as necessary */
+  }
+}

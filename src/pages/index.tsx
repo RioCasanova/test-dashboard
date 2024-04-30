@@ -20,10 +20,13 @@ export default function Home() {
   };
 
   return (
-    <div className="background-image">
+    <div className="relative min-h-screen">
+      <div className="absolute inset-0 background-image"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>{" "}
+      {/*<!-- Overlay -->*/}
       <Header imgLink="/" showLogout={false} />
       <Layout>
-        <main className="relative py-48 max-md:px-4">
+        <main className="relative py-60 max-md:px-4">
           <div className="w-full max-w-[659px]">
             <h1 className="text-2xl text-white font-[275]">
               Your Software Specialist

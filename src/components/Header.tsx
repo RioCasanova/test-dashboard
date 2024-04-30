@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
           {session ? (
             <button
               onClick={handleLogout}
-              className="font-semibold text-white max-md:max-w-full hover:text-violet-700"
+              className="font-semibold text-white max-md:max-w-full hover:text-violet-700 mr-3"
             >
               Logout
             </button>

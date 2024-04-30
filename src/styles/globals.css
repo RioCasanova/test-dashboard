@@ -17,15 +17,15 @@
 }
 
 .background-image {
-  color: rgb(var(--foreground-rgb));
-  background-image: url("../img/data_background_img.jpg"); /* Replace 'path/to/your/image.jpg' with the path to your background image */
+  background-image: url("../img/data_background_img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keep the background image fixed */
-  position: relative;
+  background-attachment: fixed;
 }
-
+.min-h-screen {
+  min-height: 100vh; /* Ensures the div is at least as tall as the viewport */
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -36,23 +36,31 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.background-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Adjust the opacity (0.5) to make the overlay darker or lighter */
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Use a pseudo-element for iOS compatibility */
+  body::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Ensure it's rendered behind the content */
+
+    background-image: url("../img/data_background_img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Ensure click events pass through to elements below */
+  }
+  /* Override the actual body background for iOS */
+  body {
+    background: none;
   }
 }
