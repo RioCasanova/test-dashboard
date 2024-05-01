@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import Reports from "./Reports";
 
 export function Dashboard() {
   const [cards, setCards] = useState([]);
@@ -27,11 +28,12 @@ export function Dashboard() {
               cards.map((card: { id: string }) => (
                 <Card key={card.id} card={card} />
               ))}
+            <div className="w-full p2">
+              <Reports />
+            </div>
           </div>
         </div>
-        <div className="lg:w-1/3 w-full">
-          {/* Additional content for the sidebar or secondary column can go here */}
-        </div>
+        <div className="lg:w-1/3 w-full"></div>
       </div>
     </section>
   );

@@ -131,6 +131,8 @@ h6 {
   padding: 8px 15px;
 }
 
+/* -- SIDEBAR STYLES -- */
+
 /* -- CARD STYLES -- */
 .cardContainer {
   padding-bottom: 10px;
@@ -166,4 +168,8 @@ h6 {
   right: 0;
   z-index: 1000;
   opacity: 90%;
+}
+
+.chart-card {
+  position: relative;
 }

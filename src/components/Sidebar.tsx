@@ -16,7 +16,7 @@ export function Sidebar({ children }: Sidebar) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <aside className={`h-screen sidebar ${expanded ? "w-64" : "w-16"}`}>
+    <aside className={`sidebar ${expanded ? "w-64" : "w-16"}`}>
       <nav className="h-full flex flex-col bg-white dark:bg-neutral-600 border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <Image
