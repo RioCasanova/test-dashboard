@@ -22,7 +22,7 @@ export default function CardFilter({
           <li className="p-2 text-gray-700 text-left dropdown-header">
             <h6>Filter</h6>
           </li>
-          <li>
+          <li className="">
             <Link
               href="#"
               onClick={(e) => {

@@ -26,7 +26,7 @@ const DashboardPage: React.FC = () => {
   return (
     <div>
       {/* <Header imgLink="/dashboard" showLogout={true} /> */}
-      <main className="flex bg-indigo-50">
+      <main className="flex  bg-gradient-to-b from-violet-900 to-violet-100">
         <Sidebar>
           <div>
             {" "}

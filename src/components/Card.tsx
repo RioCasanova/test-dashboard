@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CardFilter from "./CardFilter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Card({ card }: { card: any }) {
   const [filter, setFilter] = useState("Today");
@@ -13,11 +14,14 @@ export default function Card({ card }: { card: any }) {
         <div className="p-5">
           <CardFilter filterChange={handleFilterChange} />
           <h5 className="text-lg font-semibold">
-            {card.name} <span>| {filter}</span>
+            {card.name}{" "}
+            <span className="text-gray-500 text-sm">| {filter}</span>
           </h5>
-          <div className="flex items-center mt-2">
-            <div className={`iconContainer p-2 bg-gray-200 rounded-full mr-3`}>
-              <i className={card.icon}></i>
+          <div className="flex items-center mt-4">
+            <div
+              className={`iconContainer p-2 bg-gradient-to-b from-violet-200 to-violet-50 bg-violet-100 rounded-full mr-3`}
+            >
+              <i className={card.icon} style={{ color: "#6d28d9" }}></i>
             </div>
             <div className="ps-3">
               <h6 className="font-semibold">
