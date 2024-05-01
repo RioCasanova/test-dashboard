@@ -54,7 +54,7 @@ const DashboardPage: React.FC = () => {
             </div>
           </div>
         </Sidebar>
-        <div className="w-full p-6">
+        <div className="dash-container w-full p-6">
           <PageTitle title="Dashboard" message="Welcome back, John Doe!" />
           <Dashboard />
         </div>
