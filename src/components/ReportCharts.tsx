@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default function ReportCharts() {
+  // Initialize state for screen-dependent chart height
+  const [chartHeight, setChartHeight] = useState(350);
+
+  useEffect(() => {
+    // Function to update chart height based on window width
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        // Adjust this breakpoint as needed
+        setChartHeight(200); // Smaller height for smaller screens
+      } else {
+        setChartHeight(350); // Default height for larger screens
+      }
+    }
+
+    // Set initial size and add event listener
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [data, setData] = useState({
     series: [
       {
         name: "Sales",
-        data: [31, 40, 28, 51, 42, 82, 74, 42, 59, 68, 74],
+        data: [31, 40, 28, 51, 42, 82, 74, 42, 59, 68],
       },
       {
         name: "Revenue",
@@ -20,7 +43,7 @@ export default function ReportCharts() {
     ],
     options: {
       chart: {
-        height: 350,
+        height: 250, // Dynamically set the height based on screen size
         type: "area" as const,
         toolbar: {
           show: false,
@@ -45,10 +68,6 @@ export default function ReportCharts() {
       stroke: {
         curve: "smooth" as const,
       },
-      //   title: {
-      //     text: "Performance",
-      //     align: "left",
-      //   },
       grid: {
         row: {
           colors: ["#f3f3f3", "transparent"],
@@ -79,11 +98,13 @@ export default function ReportCharts() {
   });
 
   return (
-    <Chart
-      options={data.options}
-      series={data.series}
-      type={data.options.chart.type} // Cast the type to ApexChart
-      height={data.options.chart.height}
-    />
+    <div className="chart-container mr-4 md:mr-0">
+      <Chart
+        options={data.options}
+        series={data.series}
+        type={data.options.chart.type} // Cast the type to ApexChart
+        height={data.options.chart.height}
+      />
+    </div>
   );
 }

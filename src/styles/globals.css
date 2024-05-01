@@ -134,9 +134,6 @@ h6 {
 /* -- SIDEBAR STYLES -- */
 
 /* -- CARD STYLES -- */
-.cardContainer {
-  padding-bottom: 10px;
-}
 
 .iconContainer {
   font-size: 32px;
@@ -172,4 +169,15 @@ h6 {
 
 .chart-card {
   position: relative;
+}
+/* Default height for the chart */
+.chart-container {
+  height: 250px;
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
 }
