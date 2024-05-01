@@ -18,7 +18,7 @@ export function Sidebar({ children }: Sidebar) {
   return (
     <aside className={`sidebar ${expanded ? "w-64" : "w-16"}`}>
       <nav className="h-full flex flex-col bg-white dark:bg-neutral-600 border-r shadow-sm">
-        <div className="p-4 pb-2 flex justify-between items-center">
+        <div className="p-4 pb-2 md:pt-10 pt-8 flex justify-between items-center">
           <Image
             src="/logoipsum-297.svg"
             alt="Company Logo"

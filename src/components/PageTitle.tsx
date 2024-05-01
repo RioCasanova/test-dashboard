@@ -8,7 +8,7 @@ interface PageTitleProps {
 
 export default function PageTitle({ title, message }: PageTitleProps) {
   return (
-    <div className="dash-header mb-10 p-4 md:p-6 m-4 bg-slate-50 rounded-lg shadow-lg">
+    <div className="dash-header mb-10 p-4 md:p-6 m-2 bg-slate-50 rounded-lg shadow-lg">
       <h1 className="text-2xl md:text-3xl font-bold text-violet-700">
         {title}
       </h1>
