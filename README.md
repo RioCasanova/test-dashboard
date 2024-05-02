@@ -14,27 +14,56 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dashboard Specs
+information about the dashboard such as the styles and functionality  
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Styles
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Color Pallette
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**Dark Navy Blue:** `#1C2431`  
+**Turquoise:** `#4AB8A1`  
+**Light Blue:** `#007BA7`  
+**Green:** `#6DB33F`  
+**Dark Blue:** `#1E4D88`  
+**Light Gray:** `#E1E4E8`  
+**White:** `#FFFFFF`  
+**Black:** `#000000`  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Typography
 
-## Learn More
+##### Sidebar Fonts
 
-To learn more about Next.js, take a look at the following resources:
+**Font Family:** `Roboto, sans-serrif`  
+**Font Size:** `14px`  
+**Font Weight:** `400 Regular, 700 Bold`  
+**Type:** `<li>`  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##### Dashboard Titles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Font Family:** `Roboto, sans-serrif`  
+**Font Size:** `20px`  
+**Font Weight:** `700 Bold`  
+**Type:** `<h1>, <h2>`  
 
-## Deploy on Vercel
+##### Card Titles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Font Family:** `Roboto, sans-serrif`  
+**Font Size:** `16px`  
+**Font Weight:** `700 Bold`  
+**Type:** `<h3>`  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##### Data Figures
+
+**Font Family:** `Roboto, sans-serrif`  
+**Font Size:** `18px`  
+**Font Weight:** `700 Bold`  
+**Type:** `<div>, <span>`  
+
+##### Smaller Text
+
+**Font Family:** `Roboto, sans-serrif`  
+**Font Size:** `12px`  
+**Font Weight:** `400 Regular, 700 Bold`  
+**Type:** `<p>`  
+
