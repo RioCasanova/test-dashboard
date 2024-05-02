@@ -17,7 +17,7 @@ export function Sidebar({ children }: Sidebar) {
 
   return (
     <aside className={`sidebar ${expanded ? "w-64" : "w-16"}`}>
-      <nav className="h-full flex flex-col bg-black dark:bg-neutral-600 border-r shadow-sm">
+      <nav className="h-full flex flex-col bg-black dark:bg-neutral-600 shadow-sm">
         <div className="p-4 pb-2 md:pt-10 pt-8 flex justify-between items-center">
           <Image
             src="/datalynx.png"
@@ -28,7 +28,7 @@ export function Sidebar({ children }: Sidebar) {
           />
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-1 rounded-lg bg-black hover:border-white text-white dark:bg-neutral-700 dark:hover:bg-neutral-800"
+            className="p-1 rounded-lg bg-black text-white dark:bg-neutral-700 dark:hover:bg-neutral-800"
           >
             {expanded ? (
               <i className="fa-solid fa-chevron-left"></i>
