@@ -43,7 +43,7 @@ export default function Home() {
             </p>
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
               <button
-                className="group mt-8 rounded-lg border border-violet-700 px-5 py-4 transition-colors hover:border-white hover:bg-violet-950 hover:dark:bg-neutral-800/30"
+                className="group mt-8 rounded-lg border border-violet-700 px-5 py-4 transition-colors  hover:bg-violet-950/50 hover:dark:bg-neutral-800/30"
                 onClick={handleLogin}
               >
                 <h2 className={`text-2xl font-semibold text-white`}>Login</h2>

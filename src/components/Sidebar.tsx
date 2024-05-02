@@ -17,23 +17,23 @@ export function Sidebar({ children }: Sidebar) {
 
   return (
     <aside className={`sidebar ${expanded ? "w-64" : "w-16"}`}>
-      <nav className="h-full flex flex-col bg-white dark:bg-neutral-600 border-r shadow-sm">
+      <nav className="h-full flex flex-col bg-black dark:bg-neutral-600 border-r shadow-sm">
         <div className="p-4 pb-2 md:pt-10 pt-8 flex justify-between items-center">
           <Image
-            src="/logoipsum-297.svg"
+            src="/datalynx.png"
             alt="Company Logo"
-            width={expanded ? 128 : 48} // Adjust minimal width when not expanded
-            height={32}
+            width={expanded ? 180 : 10} // Adjust minimal width when not expanded
+            height={5}
             className="overflow-hidden transition-all"
           />
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-neutral-700 dark:hover:bg-neutral-800"
+            className="p-1 rounded-lg bg-black hover:border-white text-white dark:bg-neutral-700 dark:hover:bg-neutral-800"
           >
             {expanded ? (
-              <ChevronFirst color="#36454F" />
+              <i className="fa-solid fa-chevron-left"></i>
             ) : (
-              <ChevronLast color="#36454F" />
+              <i className="fa-solid fa-chevron-right"></i>
             )}
           </button>
         </div>
