@@ -14,6 +14,7 @@ import {
   LayoutDashboard,
   Settings,
   LogOut,
+  Truck,
 } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 
@@ -31,21 +32,33 @@ const DashboardPage: React.FC = () => {
           <div>
             {" "}
             <div>
+              <div className="mt-12">
+                <SidebarItem
+                  icon={<LayoutDashboard size={24} />}
+                  text="Dashboard"
+                  // alert
+                />
+              </div>
+
               <SidebarItem
-                icon={<LayoutDashboard size={24} />}
-                text="Dashboard"
-                alert
+                icon={<Boxes size={24} />}
+                text="Data Exchange"
+                caption="BDI"
               />
-              <SidebarItem icon={<UserCircle size={24} />} text="Profile" />
-              <SidebarItem icon={<Receipt size={24} />} text="Invoices" />
-              <SidebarItem icon={<Boxes size={24} />} text="Products" />
-              <SidebarItem icon={<Package size={24} />} text="Orders" alert />
-              <SidebarItem icon={<BarChart3 size={24} />} text="Analytics" />
+
+              <SidebarItem
+                icon={<Truck size={24} />}
+                text="Inventory"
+                caption="Track & Trace"
+              />
+              <SidebarItem
+                icon={<Package size={24} />}
+                text="Global Items"
+                // alert
+              />
             </div>
-            <div className="">
-              <hr className="border-t border-gray-200 dark:border-neutral-700 mb-50" />
-              <SidebarItem icon={<LifeBuoy size={24} />} text="Support" />
-              <SidebarItem icon={<Settings size={24} />} text="Settings" />
+            <div className="mt-60">
+              <hr className="border-t border-gray-200 dark:border-neutral-700 mb-50 mb-2" />
               <SidebarItem
                 icon={<LogOut size={24} color="#880808" />}
                 onClick={handleLogout}

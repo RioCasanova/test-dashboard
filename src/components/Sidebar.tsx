@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import { ReactNode, useState, createContext, useContext } from "react";
 
 interface SidebarContextType {
@@ -8,27 +7,31 @@ interface SidebarContextType {
 
 const SidebarContext = createContext<SidebarContextType>({ expanded: false });
 
-interface Sidebar {
+interface SidebarProps {
   children: ReactNode;
 }
 
-export function Sidebar({ children }: Sidebar) {
+export function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <aside className={`sidebar ${expanded ? "w-64" : "w-16"}`}>
-      <nav className="h-full flex flex-col bg-black dark:bg-neutral-600 shadow-sm">
-        <div className="p-4 pb-2 md:pt-10 pt-8 flex justify-between items-center">
-          <Image
-            src="/datalynx.png"
-            alt="Company Logo"
-            width={expanded ? 180 : 10} // Adjust minimal width when not expanded
-            height={5}
-            className="overflow-hidden transition-all"
-          />
+    <aside
+      className={`transition-all duration-300 ${expanded ? "w-64" : "w-16"}`}
+    >
+      <nav className="h-full flex flex-col bg-black dark:bg-gray-800 shadow-lg">
+        <div className="p-4 flex justify-between items-center">
+          {expanded && (
+            <Image
+              src="/datalynx.png"
+              alt="Company Logo"
+              width={180}
+              height={40}
+              className="overflow-hidden transition-all"
+            />
+          )}
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-1 rounded-lg bg-black text-white dark:bg-neutral-700 dark:hover:bg-neutral-800"
+            className="p-2 rounded-lg bg-gray-900 text-white dark:bg-gray-700 hover:bg-gray-600"
           >
             {expanded ? (
               <i className="fa-solid fa-chevron-left"></i>
@@ -38,34 +41,26 @@ export function Sidebar({ children }: Sidebar) {
           </button>
         </div>
         <SidebarContext.Provider value={{ expanded }}>
-          <ul className="flex-1 px-3">{children}</ul>
+          <ul className="flex-1 flex flex-col items-center justify-center space-y-4">
+            {children}
+          </ul>
         </SidebarContext.Provider>
-        <div className="border-t flex p-3">
-          <Image
-            src="/avatar-svgrepo-com.svg"
-            alt="Profile Picture"
-            className="rounded-md"
-            width={40}
-            height={10}
-          />
-          <div
-            className={`flex items-center overflow-hidden transition-all ${
-              expanded ? "w-52 ml-3" : "w-0"
-            }`}
-          >
-            <div className="leading-4">
-              <h4 className="font-semibold text-gray-600">John Doe</h4>
-              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
-            </div>
-            <MoreVertical size={24} />
-          </div>
-        </div>
       </nav>
     </aside>
   );
 }
 
 interface SidebarItemProps {
+  caption?: string;
+  icon: ReactNode;
+  text: string;
+  active?: boolean;
+  alert?: boolean;
+  onClick?: () => void;
+}
+
+interface SidebarItemProps {
+  caption?: string;
   icon: ReactNode;
   text: string;
   active?: boolean;
@@ -74,6 +69,7 @@ interface SidebarItemProps {
 }
 
 export function SidebarItem({
+  caption,
   icon,
   text,
   active = false,
@@ -82,44 +78,42 @@ export function SidebarItem({
 }: SidebarItemProps) {
   const { expanded } = useContext(SidebarContext);
   return (
-    <li
-      className={`relative flex items-center py-2 px-3 my-1 font-medium 
-                    rounded-md cursor-pointer transition-colors group
+    <div className="w-full">
+      {caption && expanded && (
+        <p className="text-xs text-gray-400 mb-1">{caption}</p>
+      )}
+      <li
+        className={`relative flex items-center py-3 px-4 font-medium
+                    rounded-lg cursor-pointer transition-all duration-200
                     ${
                       active
-                        ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-                        : "hover:bg-indigo-50 text-gray-600"
+                        ? "bg-indigo-200 text-indigo-800"
+                        : "hover:bg-indigo-50 dark:hover:bg-gray-700 text-gray-600"
                     }
-                    `}
-      onClick={onClick}
-    >
-      <div className={`flex-shrink-0`}>{icon}</div>
-      <span
-        className={`ml-3 transition-all duration-300 overflow-hidden ${
-          expanded ? "inline max-w-xs" : "w-0"
-        }`}
+                    justify-start group`}
+        onClick={onClick}
       >
-        {text}
-      </span>
-      {alert && (
-        <div
-          className={`absolute right-2 w-2 h-2 rounded-full bg-indigo-400 ${
-            expanded ? "" : "top-2"
-          }`}
-        ></div>
-      )}
-
-      {!expanded && (
-        <div
-          className={`
-          absolute left-full rounded-md px-2 py-1 ml-6 
-          bg-indigo-100 text-indigo-800 text-sm invisible opacity-0
-          transition-opacity group-hover:opacity-100 group-hover:visible
-           `}
+        <div className="text-lg">{icon}</div>
+        <span
+          className={`ml-3 transition-all duration-200 overflow-hidden whitespace-nowrap
+                      ${expanded ? "inline-block" : "hidden"}`}
         >
           {text}
-        </div>
-      )}
-    </li>
+        </span>
+        {alert && (
+          <div
+            className={`absolute right-2 w-2 h-2 rounded-full bg-indigo-400`}
+          ></div>
+        )}
+        {!expanded && (
+          <div
+            className={`absolute left-full ml-2 rounded-md bg-indigo-100 text-indigo-800 text-sm px-2 py-1 opacity-0
+            group-hover:opacity-100 z-40 transition-opacity`}
+          >
+            {text}
+          </div>
+        )}
+      </li>
+    </div>
   );
 }
