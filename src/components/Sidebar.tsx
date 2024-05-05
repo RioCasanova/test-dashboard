@@ -80,7 +80,7 @@ export function SidebarItem({
   return (
     <div className="w-full">
       {caption && expanded && (
-        <p className="text-xs text-gray-400 mb-1">{caption}</p>
+        <p className="text-xs text-gray-400 mt-10 ms-4">{caption}</p>
       )}
       <li
         className={`relative flex items-center py-3 px-4 font-medium
