@@ -1,48 +1,27 @@
-import React, { useState } from "react";
-import CardFilter from "./CardFilter";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-export default function Card({ card }: { card: any }) {
-  const [filter, setFilter] = useState("Today");
-  const handleFilterChange = (filter: string) => {
-    setFilter(filter);
-  };
+interface CardProps {
+  card: any;
+  index: number; // Index of this card in the list
+}
+
+export default function Card({ card, index }: CardProps) {
+  // Assign background color based on the card's index
+  const backgroundColors = ["#2874EC", "#3C7191", "#0B215B"];
+  const cardColor =
+    index < backgroundColors.length ? backgroundColors[index] : "#ffffff";
+
+  // Convert percentage to a displayed number
+  const displayedValue = Math.round(card.percentage * 100);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg info-card sales-card pb-2 max-w-md md:col-span-1">
-      <div className="p-5">
-        <CardFilter filterChange={handleFilterChange} />
-        <h5 className="text-lg font-semibold">
-          {card.name} <span className="text-gray-500 text-sm">| {filter}</span>
-        </h5>
-        <div className="flex items-center mt-4">
-          <div
-            className={`iconContainer p-2 bg-gradient-to-b from-violet-200 to-violet-50 bg-violet-100 rounded-full mr-3`}
-          >
-            <i className={card.icon} style={{ color: "#6d28d9" }}></i>
-          </div>
-          <div className="ps-3">
-            <h6 className="font-semibold">
-              {card.name === "Revenue"
-                ? "$" + card.amount.toLocaleString("en-US")
-                : card.amount.toLocaleString("en-US")}
-            </h6>
-            <span
-              className={`${
-                card.percentage > 0 ? "text-green-500" : "text-red-500"
-              } text-sm font-bold`}
-            >
-              {card.percentage > 0
-                ? "+" + card.percentage * 100
-                : card.percentage * 100}
-              %
-            </span>
-            <span className="text-gray-500 text-sm">
-              {card.percentage > 0 ? " increase" : " decrease"}
-            </span>
-          </div>
-        </div>
-      </div>
+    <div
+      className="p-8  shadow-lg text-white"
+      style={{ backgroundColor: cardColor }}
+    >
+      {/* Card Value and Title */}
+      <h2 className="text-2xl mb-2">{displayedValue}</h2>
+      <p className="text-2xl">{card.name}</p>
     </div>
   );
 }

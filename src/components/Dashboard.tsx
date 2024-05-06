@@ -27,8 +27,8 @@ export function Dashboard() {
         {/* Cards Column */}
         <div className="col-span-1 space-y-4">
           {cards.length > 0 &&
-            cards.map((card: { id: string }) => (
-              <Card key={card.id} card={card} />
+            cards.map((card: { id: string }, index: number) => (
+              <Card key={card.id} card={card} index={index} />
             ))}
         </div>
         {/* Reports Chart - Spanning 3 columns */}
