@@ -21,13 +21,19 @@ export function Dashboard() {
   }, []);
 
   return (
-    <section className="dashboard">
-      <div className="w-full p-2 grid grid-cols-1 md:grid-cols-4 gap-4">
-        {cards.length > 0 &&
-          cards.map((card: { id: string }) => (
-            <Card key={card.id} card={card} />
-          ))}
-        <div className="w-full col-span-1 md:col-start-1 md:col-end-5">
+    <section className="dashboard p-4">
+      {/* Two-column Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Cards Column */}
+        <div className="col-span-1 space-y-4">
+          {cards.length > 0 &&
+            cards.map((card: { id: string }) => (
+              <Card key={card.id} card={card} />
+            ))}
+        </div>
+        {/* Reports Chart - Spanning 3 columns */}
+        <div className="col-span-1 md:col-span-3 bg-white p-4 rounded-lg shadow-lg">
+          <h2 className="text-lg font-bold mb-4">Items Statistics</h2>
           <Reports />
         </div>
       </div>
