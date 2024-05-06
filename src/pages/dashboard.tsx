@@ -4,18 +4,7 @@ import { Dashboard } from "@/components/Dashboard";
 import PageTitle from "@/components/PageTitle";
 import { Sidebar, SidebarItem } from "@/components/Sidebar";
 
-import {
-  LifeBuoy,
-  Receipt,
-  Boxes,
-  Package,
-  UserCircle,
-  BarChart3,
-  LayoutDashboard,
-  Settings,
-  LogOut,
-  Truck,
-} from "lucide-react";
+import { Boxes, Package, LayoutDashboard, LogOut, Truck } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 
 const handleLogout = async () => {
@@ -27,11 +16,11 @@ const DashboardPage: React.FC = () => {
   return (
     <div>
       {/* <Header imgLink="/dashboard" showLogout={true} /> */}
-      <main className="flex bg-gradient-to-b from-violet-900 to-violet-100">
+      <main className="flex bg-violet-50">
         <Sidebar>
           <div>
             {" "}
-            <div>
+            <div className="">
               <div className="mt-12">
                 <SidebarItem
                   icon={<LayoutDashboard size={24} />}
@@ -67,8 +56,9 @@ const DashboardPage: React.FC = () => {
             </div>
           </div>
         </Sidebar>
-        <div className="dash-container w-full p-6 pt-2">
-          <PageTitle title="Dashboard" message="Welcome back, John Doe!" />
+        <div className="dash-container w-full">
+          <div className="bg-[#030C29] p-14"></div>
+          <PageTitle title="Dashboard" />
           <Dashboard />
         </div>
         {/* <div className="w-full p-8 flex flex-col">

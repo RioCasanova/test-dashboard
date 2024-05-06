@@ -18,8 +18,8 @@ export function Sidebar({ children }: SidebarProps) {
     <aside
       className={`transition-all duration-300 ${expanded ? "w-64" : "w-16"}`}
     >
-      <nav className="h-full flex flex-col bg-black dark:bg-gray-800 shadow-lg">
-        <div className="p-4 flex justify-between items-center">
+      <nav className="h-full flex flex-col bg-[#030C29] dark:bg-gray-800 shadow-lg p-2">
+        <div className="p-4 flex justify-between items-center mt-5">
           {expanded && (
             <Image
               src="/datalynx.png"
@@ -31,7 +31,7 @@ export function Sidebar({ children }: SidebarProps) {
           )}
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-2 rounded-lg bg-gray-900 text-white dark:bg-gray-700 hover:bg-gray-600"
+            className="p-2 ms-2 rounded-lg text-white dark:bg-gray-700 hover:bg-gray-600"
           >
             {expanded ? (
               <i className="fa-solid fa-chevron-left"></i>
@@ -41,9 +41,7 @@ export function Sidebar({ children }: SidebarProps) {
           </button>
         </div>
         <SidebarContext.Provider value={{ expanded }}>
-          <ul className="flex-1 flex flex-col items-center justify-center space-y-4">
-            {children}
-          </ul>
+          <ul className="flex-1 flex flex-col space-y-4">{children}</ul>
         </SidebarContext.Provider>
       </nav>
     </aside>
@@ -80,22 +78,22 @@ export function SidebarItem({
   return (
     <div className="w-full">
       {caption && expanded && (
-        <p className="text-xs text-gray-400 mt-10 ms-4">{caption}</p>
+        <p className="text-xs text-gray-600 mt-10 mb-3 ms-4">{caption}</p>
       )}
       <li
         className={`relative flex items-center py-3 px-4 font-medium
-                    rounded-lg cursor-pointer transition-all duration-200
+                    rounded-lg cursor-pointer transition-all duration-300
                     ${
                       active
                         ? "bg-indigo-200 text-indigo-800"
-                        : "hover:bg-indigo-50 dark:hover:bg-gray-700 text-gray-600"
+                        : "hover:bg-gray-600 dark:hover:bg-gray-700 text-gray-300"
                     }
                     justify-start group`}
         onClick={onClick}
       >
         <div className="text-lg">{icon}</div>
         <span
-          className={`ml-3 transition-all duration-200 overflow-hidden whitespace-nowrap
+          className={`ml-3 transition-all duration-300 overflow-hidden whitespace-nowrap
                       ${expanded ? "inline-block" : "hidden"}`}
         >
           {text}
@@ -107,7 +105,7 @@ export function SidebarItem({
         )}
         {!expanded && (
           <div
-            className={`absolute left-full ml-2 rounded-md bg-indigo-100 text-indigo-800 text-sm px-2 py-1 opacity-0
+            className={`absolute left-full ml-2 rounded-md text-sm px-2 py-1 opacity-0
             group-hover:opacity-100 z-40 transition-opacity`}
           >
             {text}
