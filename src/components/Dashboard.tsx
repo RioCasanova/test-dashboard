@@ -33,8 +33,16 @@ export function Dashboard() {
         </div>
         {/* Reports Chart - Spanning 3 columns */}
         <div className="col-span-1 md:col-span-3 bg-white p-4 rounded-lg shadow-lg">
-          <h2 className="text-lg font-bold mb-4">Items Statistics</h2>
           <Reports />
+        </div>
+        <div className="col-span-1 md:col-span-2 bg-white p-4 rounded-lg shadow-lg">
+          <h4 className="font-bold pb-8">Events</h4>
+          <h5>Total Events</h5>
+          <p>Here is a list of total events that have taken place through the history of your account</p>
+        </div>
+        <div className="col-span-1 md:col-span-2 bg-white p-4 rounded-lg shadow-lg">
+          <h4 className="font-bold pb-8">Recent Events</h4>
+          <p>Here are your recent events</p>
         </div>
       </div>
     </section>

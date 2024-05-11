@@ -43,7 +43,7 @@ export default function ReportCharts() {
     ],
     options: {
       chart: {
-        height: 250, // Dynamically set the height based on screen size
+        height: chartHeight, // Dynamically set the height based on screen size
         type: "area" as const,
         toolbar: {
           show: false,
