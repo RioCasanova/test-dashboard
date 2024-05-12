@@ -12,7 +12,7 @@ export default function ReportCharts() {
     function handleResize() {
       if (window.innerWidth < 768) {
         // Adjust this breakpoint as needed
-        setChartHeight(200); // Smaller height for smaller screens
+        setChartHeight(100); // Smaller height for smaller screens
       } else {
         setChartHeight(350); // Default height for larger screens
       }

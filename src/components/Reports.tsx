@@ -8,7 +8,7 @@ export default function Reports() {
   };
   return (
     <div>
-      <div className="md:p-4">
+      <div className="md:p-4 min-h-[400px]">
         <h5 className="text-lg font-semibold md:mb-2 md:ms-0 md:mt-0 ms-4 mt-4">
           Item Statistics 
         </h5>
