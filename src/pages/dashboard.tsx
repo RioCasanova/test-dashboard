@@ -23,25 +23,25 @@ const DashboardPage: React.FC = () => {
             <div className="">
               <div className="mt-12">
                 <SidebarItem
-                  icon={<LayoutDashboard size={24} />}
+                  icon={<LayoutDashboard size={24} strokeWidth={1}/>}
                   text="Dashboard"
                   // alert
                 />
               </div>
 
               <SidebarItem
-                icon={<Boxes size={24} />}
+                icon={<Boxes size={24} strokeWidth={1}/>}
                 text="Data Exchange"
                 caption="BDI"
               />
 
               <SidebarItem
-                icon={<Truck size={24} />}
+                icon={<Truck size={24} strokeWidth={1} />}
                 text="Inventory"
-                caption="Track & Trace"
+                caption="TRACK & TRACE"
               />
               <SidebarItem
-                icon={<Package size={24} />}
+                icon={<Package size={24} strokeWidth={1}/>}
                 text="Global Items"
                 // alert
               />

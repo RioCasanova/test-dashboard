@@ -21,7 +21,7 @@ export default function Card({ card, index }: CardProps) {
     >
       {/* Card Value and Title */}
       <h2 className="text-2xl mb-2">{displayedValue}</h2>
-      <p className="text-2xl">{card.name}</p>
+      <p className="text-xl font-light">{card.name}</p>
     </div>
   );
 }

@@ -34,9 +34,9 @@ export function Sidebar({ children }: SidebarProps) {
             className="p-2 ms-2 rounded-lg text-white dark:bg-gray-700 hover:bg-gray-600"
           >
             {expanded ? (
-              <i className="fa-solid fa-chevron-left"></i>
+              <i className="fa-solid fa-chevron-left text-slate-400"></i>
             ) : (
-              <i className="fa-solid fa-chevron-right"></i>
+              <i className="fa-solid fa-chevron-right text-slate-400"></i>
             )}
           </button>
         </div>
@@ -81,7 +81,7 @@ export function SidebarItem({
         <p className="text-xs text-gray-600 mt-10 mb-3 ms-4">{caption}</p>
       )}
       <li
-        className={`relative flex items-center py-3 px-4 font-medium
+        className={`relative flex items-center py-2 px-4 font-medium
                     rounded-lg cursor-pointer transition-all duration-300
                     ${
                       active
@@ -93,7 +93,7 @@ export function SidebarItem({
       >
         <div className="text-lg">{icon}</div>
         <span
-          className={`ml-3 transition-all duration-300 overflow-hidden whitespace-nowrap
+          className={`ml-3 font-light text-slate-400 transition-all duration-300 overflow-hidden whitespace-nowrap
                       ${expanded ? "inline-block" : "hidden"}`}
         >
           {text}

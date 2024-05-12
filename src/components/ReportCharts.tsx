@@ -29,15 +29,15 @@ export default function ReportCharts() {
   const [data, setData] = useState({
     series: [
       {
-        name: "Sales",
+        name: "Total Items",
         data: [31, 40, 28, 51, 42, 82, 74, 42, 59, 68],
       },
       {
-        name: "Revenue",
+        name: "Total Pending Items",
         data: [11, 32, 45, 32, 34, 52, 46, 33, 50, 47],
       },
       {
-        name: "Customers",
+        name: "Total Global Items",
         data: [15, 11, 32, 18, 9, 24, 20, 11, 14, 10],
       },
     ],
@@ -52,7 +52,7 @@ export default function ReportCharts() {
       markers: {
         size: 4,
       },
-      colors: ["#6d28d9", "#34d399", "#f87171"],
+      colors: ["#2874EC", "#3C7191", "#0B215B"],
       fill: {
         type: "gradient" as const,
         gradient: {
@@ -66,7 +66,7 @@ export default function ReportCharts() {
         enabled: false,
       },
       stroke: {
-        curve: "smooth" as const,
+        curve: "straight" as const,
       },
       grid: {
         row: {
